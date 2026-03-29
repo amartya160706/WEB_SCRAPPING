@@ -49,12 +49,12 @@ async function scrapeAlumniData() {
   await page.goto('https://alumni.uohyd.ac.in/members');
 
   await page.waitForSelector('#email');
-  await page.type('#email', 'kuntaamartya@gmail.com', { delay: 100 });
+  await page.type('#email', 'your-email', { delay: 100 });
   await page.click('#emailBtn');
   await new Promise(resolve => setTimeout(resolve, 3000));
 
   await page.waitForSelector('#passwordLogin');
-  await page.type('#passwordLogin', 'amartya#16');
+  await page.type('#passwordLogin', 'your-password');
   const loginBtnSelector = '#inside-ui-view > ui-view > main > div.mdl-grid.login-size.contact-div-change.main-family > div > div > div.mdl-cell.mdl-cell--12-col-tablet.login-top-div.login-signup-padding.flexbox.mdl-cell--7-col.login-border > div > form > div:nth-child(4) > button';
   await page.click(loginBtnSelector);
   await page.waitForNavigation({ waitUntil: 'networkidle0' });
